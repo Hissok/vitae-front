@@ -1,0 +1,16 @@
+:host{
+  header{
+    box-shadow: 0 0 2px black;
+    height: 68px;
+    line-height: 68px;
+    padding: 0 10px;
+    z-index: 100;
+
+    nav{
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+

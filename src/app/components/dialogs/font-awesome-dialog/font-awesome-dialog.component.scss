@@ -1,0 +1,60 @@
+.wrapper{
+  background: rgba(0,0,0,0.3);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  .dialog{
+    width: 400px;
+    max-width: 80%;
+    height: 500px;
+    max-height: 80%;
+    background: #fff;
+    padding: 8px;
+    box-shadow: 0 5px 10px #999;
+    border-radius: var(--RADIUS);
+    cursor: default;
+    position: relative;
+    box-sizing: border-box;
+    animation: appearance .3s forwards;
+
+    &.disapearant{
+      animation: disappearance .3s forwards;
+    }
+
+    .icon-section{
+      height: calc(100% - var(--CONTROL_HEIGHT));
+      overflow-y: auto;
+      display: grid;
+      margin-top: 10px;
+      grid-template-columns: repeat(auto-fill, 50px);
+      height: calc(100% - 60px);
+      overflow-y: auto;
+      justify-content: center;
+      align-items: start;
+
+      i{
+        height: 50px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--PRIMARY_COLOR);
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover{
+          background: var(--PRIMARY_COLOR);
+          color: #fff;
+        }
+      }
+    }
+  }
+
+}

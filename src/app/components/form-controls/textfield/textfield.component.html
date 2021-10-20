@@ -1,0 +1,12 @@
+<div>
+  <div class="field-group">
+    <i [class]="icon" *ngIf="icon"></i>
+    <input #input [type]="crypted ? 'password' : 'text'" placeholder=" " (input)="onInput($event)"
+      [ngClass]="{'field': true, 'password': type === 'password', 'with-icon': icon}" spellcheck="false"
+      />
+
+    <label>{{placeholder}}</label>
+  </div>
+
+  <button type="button" (mousedown)="toggleCrypted()" (mouseup)="toggleCrypted()" (touchstart)="toggleCrypted()" (touchend)="toggleCrypted()" *ngIf="type === 'password'"><i class="fas fa-eye"></i></button>
+</div>

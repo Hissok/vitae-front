@@ -1,0 +1,12 @@
+<h3>Liste des CV</h3>
+<ul>
+  <li *ngFor="let cv of cvs;">
+    <a>
+      <i></i>
+      {{cv.title}}
+    </a>
+    <div class='btn-group'>
+      <button><i class="fas fa-trash-alt"></i></button>
+    </div>
+  </li>
+</ul>

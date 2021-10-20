@@ -1,0 +1,120 @@
+:host{
+
+  .main{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 20px);
+
+    .container{
+      height: 70vh;
+      width: 60vw;
+      box-shadow: 0 10px 30px #ccc;
+      border-radius: 10px;
+      position: relative;
+      min-height: 400px;
+
+      &.submitMod{
+
+        .side{
+          right: 0;
+          left: 60%;
+          border-radius: 10px;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+
+      }
+
+      .side{
+        width: 40%;
+        left: 0;
+        height: 100%;
+        background: var(--GRADIENT);
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        transition: .4s;
+        z-index: 100;
+        right: 60%;
+
+        p{
+          color: #fff;
+          text-align: center;
+          font-weight: 200;
+          padding: 20px 15%;
+          font-size: 2vh;
+          line-height: 2.5vh;
+          letter-spacing: 2px;
+        }
+
+        h3{
+          color: #fff;
+          text-align: center;
+          font-size: 2.5vw;
+          margin: 0;
+          padding: 0;
+          font-family: Quicksand;
+          font-weight: 700;
+        }
+      }
+
+      form{
+        width: 60%;
+        padding: 10%;
+        box-sizing: border-box;
+        position: absolute;
+        right: 0;
+        transition: 0.4s;
+
+        &:last-child{
+          right: 40%;
+
+          &.submitMod{
+            right: 20%;
+          }
+        }
+
+        &.submitMod{
+          right: 20%;
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        .btn-group{
+          display: flex;
+          justify-content: center;
+          margin-top: 10%;
+
+          a{
+            color: var(--PRIMARY_COLOR);
+            cursor: pointer;
+
+            &:hover{
+              color: var(--HOVER_COLOR)
+            }
+          }
+        }
+
+        h2{
+          color: #555;
+
+          button{
+            width: 35px;
+            height: 35px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024){
+  //responsiv
+}

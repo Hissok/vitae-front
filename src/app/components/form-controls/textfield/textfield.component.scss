@@ -1,0 +1,88 @@
+:host{
+
+  div:not(.field-group){
+
+    position: relative;
+    display: flex;
+    height: var(--CONTROL_HEIGHT);
+    //border: 2px solid var(--PRIMARY_COLOR);
+    border: none;
+    //border-bottom: 2px solid var(--PRIMARY_COLOR);
+    background: #eee;
+    border-radius: var(--RADIUS);
+    box-sizing: border-box;
+    //border-radius: var(--RADIUS);
+    margin-bottom: 10px;
+
+    div.field-group{
+
+      display: flex;
+      width: 100%;
+      align-items: stretch;
+      position: relative;
+
+      i{
+
+        height: 100%;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        vertical-align: top;
+        position: relative;
+        color: var(--PRIMARY_COLOR) !important;
+      }
+
+      .field{
+        outline: none;
+        border: none;
+        padding: 8px;
+        height: 100%;
+        box-sizing: border-box;
+        width: 100%;
+        color: var(--COLOR);
+        font-size: 2vh;
+        background: transparent;
+
+        &:not(:placeholder-shown) + label, &:focus + label{
+          opacity: 0;
+        }
+      }
+
+    }
+
+    label{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.8em;
+      font-weight: 600;
+      left: 40px;
+      z-index: 5;
+      color: var(--PRIMARY_COLOR);
+      white-space: nowrap;
+      pointer-events: none;
+      transition: .3s;
+      padding: 0;
+      line-height: normal;
+    }
+
+    button{
+      display: block;
+      height: 100%;
+      border: none;
+      width: 40px;
+      background: transparent;
+      color: var(--PRIMARY_COLOR);
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-height: 420px){
+    div{
+      height: 2em;
+    }
+
+  }
+
+}

@@ -1,0 +1,51 @@
+<div class="main">
+
+  <div [ngClass]="{'container': true, 'submitMod':submitMod}">
+    <div class="side" #side>
+      <h3>
+        {{submitMod ? 'Bienvenue !' : 'Bon retour !'}}
+      </h3>
+
+      <p>
+        {{ submitMod ?
+          'Déjà inscrit(e) ? Connectez-vous en cliquant ci-dessous':
+          'Pas de compte ? Inscrivez-vous en cliquant ci-dessous'
+        }}
+      </p>
+
+      <app-button [label]="submitMod ? 'Se connecter' : 'S\'inscrire'" class="reverse" (click)="toggleSubmit()"></app-button>
+    </div>
+
+    <form [formGroup]="loginFormGroup" (submit)="onLoginSubmit()" [ngClass]="{'submitMod': submitMod}">
+
+      <h2>Se connecter</h2>
+
+      <app-textfield placeholder="E-mail" icon="fas fa-user" formControlName="username" #loginUsername></app-textfield>
+      <app-textfield placeholder="Mot de passe" icon="fas fa-lock" type="password" formControlName="password"></app-textfield>
+
+      <div class="btn-group">
+        <a>Mot de passe oublié ?</a>
+      </div>
+
+      <div class="btn-group">
+        <app-button label="Connexion" class="primary" [disabled]="!loginFormGroup.value.username || !loginFormGroup.value.password"></app-button>
+      </div>
+
+    </form>
+
+    <form [formGroup]="registerFormGroup" (submit)="onLoginSubmit()"  [ngClass]="{'submitMod': !submitMod}">
+
+      <h2>S'inscrire</h2>
+
+      <app-textfield placeholder="E-mail" icon="fas fa-user" formControlName="username" #registerUsername></app-textfield>
+      <app-textfield placeholder="Mot de passe" icon="fas fa-lock" type="password" formControlName="password"></app-textfield>
+      <app-textfield placeholder="Confirmation du mot de passe" icon="fas fa-lock" type="password" formControlName="confirmPassword" ></app-textfield>
+
+      <div class="btn-group">
+        <app-button label="Inscription" class="primary" [disabled]="!loginFormGroup.value.username || !loginFormGroup.value.password || !loginFormGroup.value.confirmPassword"></app-button>
+      </div>
+
+    </form>
+  </div>
+
+</div>

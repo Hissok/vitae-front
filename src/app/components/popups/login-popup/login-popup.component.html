@@ -1,0 +1,24 @@
+<app-button (click)="show()" label="s'identifier" class="primary"></app-button>
+
+<div class="wrapper" (click)="hide()" *ngIf="hidden === false">
+
+  <form (click)="$event.stopPropagation()" [ngClass]="{'disapearant': disapear}" [formGroup]="loginFormGroup" (submit)="login()">
+
+    <button class="close-button" (click)="hide()"><i class="fas fa-times"></i></button>
+
+    <h2>Connexion</h2>
+
+    <app-textfield icon="fas fa-user" placeholder="E-mail" formControlName="username" #usernameInput></app-textfield>
+    <app-textfield icon="fas fa-key" type="password" placeholder="Mot de passe" formControlName="password"></app-textfield>
+
+    <div class="link_div">
+      <a>Pas de compte ? Inscrivez-vous</a>
+    </div>
+
+    <div class="btn-group">
+      <app-button label="Connexion"></app-button>
+    </div>
+
+  </form>
+
+</div>

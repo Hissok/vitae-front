@@ -1,0 +1,9 @@
+<div class="wrapper" *ngIf="hidden === false" (click)="hide()">
+  <div  [ngClass]="{'dialog': true, 'disapearant': disapear}" (click)="$event.stopPropagation()">
+    <app-textfield icon="fas fa-search" placeholder="Recherche par mot clé" (input)="filter($event.target.value)"></app-textfield>
+    <div class="icon-section">
+      <i *ngFor="let icon of fab" [class]="'fab '+icon+' fa-2x'" (click)="apply('fab '+icon)"></i>
+      <i *ngFor="let icon of fas" [class]="'fas '+icon+' fa-2x'" (click)="apply('fas '+icon)"></i>
+    </div>
+  </div>
+</div>
